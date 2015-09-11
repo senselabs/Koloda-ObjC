@@ -220,6 +220,9 @@ static const CGFloat kCardResetAnimationDuration         = 0.2;
             self.animationDirection = location.y >= self.frame.size.height / 2 ? -1.0 : 1.0;
             
             self.layer.shouldRasterize = YES;
+            
+            // HOTFIX: Fixes a flash glitch animation when swipping quickly
+            [self pop_removeAllAnimations];
 
         }
             break;
